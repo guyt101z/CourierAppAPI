@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :agencies, except: [:new, :edit]
-=======
->>>>>>> d87a931719b584b82b1d5481508b176137522c40
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
