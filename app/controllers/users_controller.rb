@@ -11,7 +11,11 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
+    # Aqui estoy haciendo que el api responda en mas de 1 formato
+    # respond_to do |format|
+    #   format.json { render :json => @users }
+    #   format.xml { render :xml => @ausers }
+    # end
     render json: @user
   end
 
@@ -33,7 +37,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      head :no_content
+      #head :no_content
+      render json: @user, status: :accepted, location: @user #sera? status accepted? 
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -45,12 +50,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    head :no_content
+    #head :no_content
+    head :accepted # o deberia dejarlo en not_content
   end
 
   private
     
     def user_params
-      params.require(:user).permit(:email, :password, :role, :cedula, :name, :lastname, :phone)
+      #params.require(:user).permit(:email, :password, :role, :cedula, :name, :lastname, :phone)
+      params.permit(:email, :password, :role, :cedula, :name, :lastname, :phone)
     end
 end
