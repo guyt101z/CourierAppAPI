@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Agency.create(name:'LuisUPS',phone:'02121111111',address:'poste1');
+Agency.create(name:'CarlosMRW',phone:'02122222222',address:'poste2');
+Agency.create(name:'LorenaUPS',phone:'02123333333',address:'poste3');
+Agency.create(name:'MiguelFEDEX',phone:'02124444444',address:'poste4');
