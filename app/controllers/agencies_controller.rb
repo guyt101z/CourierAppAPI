@@ -39,6 +39,7 @@ class AgenciesController < ApplicationController
 
     if @agency.update(agency_params)
       head :no_content
+      #render json: @agency, status: :created, location: @agency #sera?
     else
       render json: @agency.errors, status: :unprocessable_entity
     end
@@ -56,6 +57,8 @@ class AgenciesController < ApplicationController
   private
     
     def agency_params
-      params.require(:agency).permit(:name, :phone, :address)
+      #params.require(:agency).permit(:name, :phone, :address) #hice lo correcto?
+      params.permit(:name, :phone, :address)
     end
+  
 end
