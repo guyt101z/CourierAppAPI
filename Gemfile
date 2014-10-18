@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
 
+<<<<<<< HEAD
 gem 'rails', '4.1.1'
+=======
+gem 'rails', '4.1.0'
+>>>>>>> d87a931719b584b82b1d5481508b176137522c40
 
 gem 'rails-api'
 
