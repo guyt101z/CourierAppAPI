@@ -17,7 +17,7 @@ class AgenciesController < ApplicationController
   def show
     @agency = Agency.find(params[:id])
 
-    render json: @agency
+    render json: @agency, status: :ok
   end
 
   # POST /agencies
@@ -38,8 +38,8 @@ class AgenciesController < ApplicationController
     @agency = Agency.find(params[:id])
 
     if @agency.update(agency_params)
-      head :no_content
-      #render json: @agency, status: :created, location: @agency #sera?
+      #head :no_content
+      render json: @agency, status: :accepted, location: @agency #sera? status accepted? 
     else
       render json: @agency.errors, status: :unprocessable_entity
     end
@@ -51,7 +51,8 @@ class AgenciesController < ApplicationController
     @agency = Agency.find(params[:id])
     @agency.destroy
 
-    head :no_content
+    #head :no_content
+    head :accepted # o deberia dejarlo en not_content
   end
 
   private
