@@ -1,4 +1,6 @@
 class AgenciesController < ApplicationController
+  before_filter :restrict_access
+  
   # GET /agencies
   # GET /agencies.json
   def index
@@ -60,6 +62,12 @@ class AgenciesController < ApplicationController
     def agency_params
       #params.require(:agency).permit(:name, :phone, :address) #hice lo correcto?
       params.permit(:name, :phone, :address)
+    end
+  
+    #sin accesso a menos que se encuentre el token...  
+    def restrict_access
+      api_key = ApiKey.find_by_access_token(params[:access_token])
+      head :unauthorized unless api_key 
     end
   
 end
