@@ -64,10 +64,22 @@ class AgenciesController < ApplicationController
       params.permit(:name, :phone, :address)
     end
   
-    #sin accesso a menos que se encuentre el token...  
+    #sin accesso a menos que se encuentre el token...  via params
+#     def restrict_access
+#       api_key = ApiKey.find_by_access_token(params[:access_token])
+#       head :unauthorized unless api_key 
+#     end
+  #via header
+  
+#     def restrict_access
+#       authenticate_or_request_with_http_token do | token , options |
+#         ApiKey.exists?(access_token: token)
+#       end
+#       #head :unauthorized unless api_key 
+#     end
+  # sin accesso a menos que se encuentre el token...  via request header...
     def restrict_access
-      api_key = ApiKey.find_by_access_token(params[:access_token])
+      api_key = ApiKey.find_by_access_token(request.headers["token"])
       head :unauthorized unless api_key 
     end
-  
 end
