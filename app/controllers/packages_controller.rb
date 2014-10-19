@@ -3,12 +3,12 @@ class PackagesController < ApplicationController
   # GET /packages.json
   def index
     @packages = Package.all
-   # Aqui estoy haciendo que el api responda en mas de 1 formato
-   # respond_to do |format|
-   #    format.json { render :json => @packages }
-   #    format.xml { render :xml => @packages }
-   #  end
-    render json: @packages
+   #Aqui estoy haciendo que el api responda en mas de 1 formato
+   respond_to do |format|
+      format.json { render :json => @packages }
+      format.xml { render :xml => @packages }
+    end
+   # render json: @packages
   end
 
   # GET /packages/1

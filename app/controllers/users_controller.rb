@@ -12,11 +12,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     # Aqui estoy haciendo que el api responda en mas de 1 formato
-    # respond_to do |format|
-    #   format.json { render :json => @users }
-    #   format.xml { render :xml => @ausers }
-    # end
-    render json: @user
+    respond_to do |format|
+      format.json { render :json => @users }
+      format.xml { render :xml => @ausers }
+    end
+    #render json: @user
   end
 
   # POST /users

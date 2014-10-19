@@ -5,11 +5,11 @@ class RatesController < ApplicationController
     @rates = Rate.all
 
    # Aqui estoy haciendo que el api responda en mas de 1 formato
-   # respond_to do |format|
-   #    format.json { render :json => @rates }
-   #    format.xml { render :xml => @rates }
-   #  end
-    render json: @rates
+   respond_to do |format|
+      format.json { render :json => @rates }
+      format.xml { render :xml => @rates }
+    end
+   # render json: @rates
   end
 
   # GET /rates/1
