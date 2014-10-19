@@ -29,3 +29,7 @@ Package.create(sender_id:3,receiver_id:3,sender_agency_id:4,receiver_agency_id:1
 Package.create(sender_id:1,receiver_id:1,sender_agency_id:1,receiver_agency_id:2,status:"delivered",dispatched_at:Time.now,delivered_at:Time.now,lenght:3.0,width:9.3,height:17.0,weight:22.0,value:45.0);
 Package.create(sender_id:2,receiver_id:4,sender_agency_id:4,receiver_agency_id:2,status:"delivered",dispatched_at:Time.now,delivered_at:Time.now,lenght:8.0,width:11.9,height:9.0,weight:34.0,value:98.0);
 Package.create(sender_id:3,receiver_id:1,sender_agency_id:2,receiver_agency_id:3,status:"received",dispatched_at:Time.now,delivered_at:Time.now,lenght:10,width:9.0,height:14.0,weight:18.0,value:300.0);
+
+ApiKey.create(role:"Admin", user_id:1);
+ApiKey.create(role:"Operator", user_id:2);
+ApiKey.create(role:"Client", user_id:3);
