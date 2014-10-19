@@ -16,3 +16,9 @@ User.create(email: "correo1@hotmail.com",password: "12345",role: "Operator",cedu
 User.create(email: "correo2@hotmail.com",password: "12345",role: "Client",cedula: "18124458",name: "carlos",lastname: "carrillo",phone: "04122222222");
 User.create(email: "correo3@gmail.com",password: "12345",role: "Client",cedula: "18551234",name: "Lorena",lastname: "perea",phone: "04121541515");
 User.create(email: "correo4@gmail.com",password: "12345",role: "Operator",cedula: "16565647",name: "Enrique",lastname: "aponte",phone: "04123333333");
+
+Rate.create(creator_id:1,constant:12.6,K_value:13.3);
+Rate.create(creator_id:1,constant:13,K_value:15.3);
+Rate.create(creator_id:1,constant:15.6,K_value:16.3);
+Rate.create(creator_id:1,constant:19.6,K_value:10.3);
+Rate.create(creator_id:1,constant:22.6,K_value:14.3);

@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018225303) do
+ActiveRecord::Schema.define(version: 20141018235340) do
 
   create_table "agencies", force: true do |t|
     t.string   "name"
     t.string   "phone"
     t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rates", force: true do |t|
+    t.integer  "creator_id"
+    t.decimal  "constant"
+    t.decimal  "K_value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -4,6 +4,11 @@ class RatesController < ApplicationController
   def index
     @rates = Rate.all
 
+   # Aqui estoy haciendo que el api responda en mas de 1 formato
+   # respond_to do |format|
+   #    format.json { render :json => @rates }
+   #    format.xml { render :xml => @rates }
+   #  end
     render json: @rates
   end
 
@@ -33,7 +38,8 @@ class RatesController < ApplicationController
     @rate = Rate.find(params[:id])
 
     if @rate.update(rate_params)
-      head :no_content
+      #head :no_content
+      render json: @rate, status: :accepted, location: @rate #sera? status accepted? 
     else
       render json: @rate.errors, status: :unprocessable_entity
     end
@@ -45,12 +51,14 @@ class RatesController < ApplicationController
     @rate = Rate.find(params[:id])
     @rate.destroy
 
-    head :no_content
+    #head :no_content
+    head :accepted # o deberia dejarlo en not_content
   end
 
   private
     
     def rate_params
-      params.require(:rate).permit(:creator_id, :constant, :K_value)
+      #params.require(:rate).permit(:creator_id, :constant, :K_value)
+      params.permit(:creator_id, :constant, :K_value)
     end
 end
