@@ -1,4 +1,5 @@
 class RatesController < ApplicationController
+  before_filter :restrict_access
   # GET /rates
   # GET /rates.json
   def index
@@ -60,5 +61,10 @@ class RatesController < ApplicationController
     def rate_params
       #params.require(:rate).permit(:creator_id, :constant, :K_value)
       params.permit(:creator_id, :constant, :K_value)
+    end
+  
+    def restrict_access
+      api_key = ApiKey.find_by_access_token(request.headers["token"])
+      head :unauthorized unless api_key 
     end
 end

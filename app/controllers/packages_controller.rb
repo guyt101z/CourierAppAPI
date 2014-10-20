@@ -1,4 +1,5 @@
 class PackagesController < ApplicationController
+  before_filter :restrict_access
   # GET /packages
   # GET /packages.json
   def index
@@ -59,5 +60,10 @@ class PackagesController < ApplicationController
     def package_params
       #params.require(:package).permit(:sender_id, :receiver_id, :sender_agency_id, :receiver_agency_id, :status, :dispatched_at, :delivered_at, :lenght, :width, :height, :weight, :value)
        params.permit(:sender_id, :receiver_id, :sender_agency_id, :receiver_agency_id, :status, :dispatched_at, :delivered_at, :lenght, :width, :height, :weight, :value)
+    end
+    
+    def restrict_access
+      api_key = ApiKey.find_by_access_token(request.headers["token"])
+      head :unauthorized unless api_key 
     end
 end
