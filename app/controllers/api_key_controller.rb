@@ -1,8 +1,11 @@
 class APIKeyController < ApplicationController
   
   def create
+    #verifico que el usuario haciendo la peticion sea valido
+    
+    
     @api_key = ApiKey.new(key_params)
-
+       
     if @api_key.save
       render json: @api_key, status: :created, location: @api_key
     else
@@ -24,6 +27,6 @@ class APIKeyController < ApplicationController
     def key_params      
       params.permit(:role, :user_id)
     end
-  
+    
   
 end

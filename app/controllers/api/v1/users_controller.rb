@@ -5,7 +5,11 @@ module API
       # GET /users.json
       def index
         @users = User.all
-
+        # Aqui estoy haciendo que el api responda en mas de 1 formato
+        respond_to do |format|
+          format.json { render :json => @users }
+          format.xml { render :xml => @ausers }
+        end
         render json: @users
       end
 
@@ -13,12 +17,9 @@ module API
       # GET /users/1.json
       def show
         @user = User.find(params[:id])
-        # Aqui estoy haciendo que el api responda en mas de 1 formato
-        respond_to do |format|
-          format.json { render :json => @users }
-          format.xml { render :xml => @ausers }
-        end
-        #render json: @user
+
+
+        render json: @user
       end
 
       # POST /users
