@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  resources :agencies, except: [:new, :edit]
-  resources :users, except: [:new, :edit]
-  resources :rates, except: [:new, :edit]
-  resources :packages, except: [:new, :edit]
-
+  #namespace :api, :path => "", :constraints => {:subdomain => "api"},defaults: {format: 'json'} do #
+  namespace :api do#, :path => "", :constraints => {:subdomain => "api"} do
+      namespace :v1 do
+        resources :agencies, except: [:new, :edit]
+        resources :users, except: [:new, :edit]
+        resources :rates, except: [:new, :edit]
+        resources :packages, except: [:new, :edit]
+      end
+  end
+        resources :agencies, except: [:new, :edit]
+        resources :users, except: [:new, :edit]
+        resources :rates, except: [:new, :edit]
+        resources :packages, except: [:new, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
