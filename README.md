@@ -63,13 +63,23 @@ Endpoints Specifics
 >    * **success**: *status*: *created*, return the *json* of the created object
 >    * **error**: *status*: *unprocessable_entity*, blank page
 > - *GET*                                                                                                           
->    *  ` /api/v1/agencies/:id `
+>    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
+>    * **success**: *status*: *ok*, return the *json* of the especified entity
+>    * **error**: *status*: *bad_request*, blank page
 > - *PATCH*
->    *  ` /api/v1/agencies/:id `
+>    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
+>    * **params**:`name:string` / `phone:string` / `address:string`
+>    * **success**: *status*: *accepted*, return the *json* of the updated object
+>    * **error**: *status*: *bad_request*, blank page
 > - *PUT*       
->    *  ` /api/v1/agencies/:id `
+>    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
+>    * **params**:`name:string` / `phone:string` / `address:string`
+>    * **success**: *status*: *accepted*, return the *json* of the updated object
+>    * **error**: *status*: *bad_request*, blank page
 > - *DELETE*    
->    *  ` /api/v1/agencies/:id `
+>    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
+>    * **success**: *status*: *accepted*, black page (the object was deleted)
+>    * **error**: *status*: *no_content*, blank page
 >
 
 
