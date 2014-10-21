@@ -30,23 +30,35 @@ so they can be used as references to another Apps on development.
 
 well, if you are curious about which App is this API giving service, check:  [link to_app_rep](https://github.com/torreta/CourierApp).
 
-Endpoints
----------
+Endpoints Overview
+------------------
 
   it may sound weird but, since calls on ` http://localhost:3000/<resource>` require a validation token, heres the way to obtain it...
   
   POST   ` http://localhost:3000/api_key` with header values on the call "email" and "password", you can use the default email: 'example@gmail.com' and password:'12345'
-  
-  
-  
-* Basico
-- Facil de entender
-+ Cero complicaciones
 
-### Razones
+### resources 
+   `/api/v1` **index, create, show, update, destroy **
+   
+- Agencies 
+* Users  
+- Packages
++ Rates
+* Api_key (create, destroy)
+* Prices (not actually a resource, but it calculates the cost of a package)
 
-1. somos tipos cool
-2. queremos ayudar
-3. queremos graduarnos
+Endpoints Specifics
+-------------------
 
-es mas, para ser precisos nuestro codigo se ve asi ` gem 'bootstrap', '2.0.1.3' ` aunque esa version de bootstrap no existe XD.
+### Agencies
+
+ Verb   URI Pattern                                                                                                                                                                
+ GET    /api/v1/agencies(.:format)                                                                                                                                
+ POST   /api/v1/agencies                                                                                                                       
+ GET    /api/v1/agencies/:id                                                                                                                                    
+ PATCH  /api/v1/agencies/:id                                                                                                                                          
+ PUT    /api/v1/agencies/:id                                                                                                                           
+ DELETE /api/v1/agencies/:id
+
+
+
