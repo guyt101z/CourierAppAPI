@@ -150,6 +150,22 @@ Endpoints Specifics
 >    * `/api/v1/packages(.json,.xml)`
 >    * **success**: *status*: *ok*, return all packages on the specified format
 >    * **error**: *status:  bad_request*, blank page
+>    * `/api/v1/packages(.json,.xml)` (search by sender_id)
+>    * **params**:`sender_id:integer`
+>    * **success**: *status*: *ok*, returns the all packages of the specified sender
+>    * **error**: *status:  not_found*, blank page
+>    * `/api/v1/packages(.json,.xml)` (search by receiver_id)
+>    * **params**:`receiver_id:integer`
+>    * **success**: *status*: *ok*, returns the all packages of the specified receiver
+>    * **error**: *status:  not_found*, blank page
+>    * `/api/v1/packages(.json,.xml)` (search by sender_agency_id)
+>    * **params**:`sender_agency_id:integer`
+>    * **success**: *status*: *ok*, returns the all packages of the specified sender agency
+>    * **error**: *status:  not_found*, blank page
+>    * `/api/v1/packages(.json,.xml)` (search by receiver_agency_id)
+>    * **params**:`receiver_agency_id:integer`
+>    * **success**: *status*: *ok*, returns the all packages of the specified receiver agency
+>    * **error**: *status:  not_found*, blank page
 > - *POST*                                                                                                 
 >    * `/api/v1/packages`
 >    * **params**:`sender_id:integer receiver_id:integer sender_agency_id:integer receiver_agency_id:integer status:string dispatched_at:datetime delivered_at:datetime lenght:decimal width:decimal height:decimal weight:decimal value:decimal`

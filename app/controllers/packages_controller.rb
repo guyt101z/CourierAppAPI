@@ -3,13 +3,62 @@ class PackagesController < ApplicationController
   # GET /packages
   # GET /packages.json
   def index
-    @packages = Package.all
-   #Aqui estoy haciendo que el api responda en mas de 1 formato
-   respond_to do |format|
-      format.json { render :json => @packages }
-      format.xml { render :xml => @packages }
-    end
-   # render json: @packages
+    #un pseudo scope para la busqueda por parametros del paquete
+    if params[:sender_id]        
+      @packages = Package.where(sender_id:params[:sender_id]);
+      if @packages                
+        respond_to do |format|
+          format.json { render :json => @packages }
+          format.xml { render :xml => @packages }
+        end                
+      else
+        head :not_found
+      end
+    elsif params[:receiver_id] 
+      @packages = Package.where(receiver_id:params[:receiver_id]);
+      if @packages
+
+        respond_to do |format|
+          format.json { render :json => @packages }
+          format.xml { render :xml => @packages }
+        end
+
+      else
+        head :not_found
+      end
+    elsif params[:sender_agency_id] 
+      @packages = Package.where(sender_agency_id:params[:sender_agency_id]);
+      if @packages
+
+        respond_to do |format|
+          format.json { render :json => @packages }
+          format.xml { render :xml => @packages }
+        end
+
+      else
+        head :not_found
+      end
+    elsif params[:receiver_agency_id] 
+      @packages = Package.where(receiver_agency_id:params[:receiver_agency_id]);
+      if @packages
+
+        respond_to do |format|
+          format.json { render :json => @packages }
+          format.xml { render :xml => @packages }
+        end
+
+      else
+        head :not_found
+      end
+    else
+      # Aqui estoy haciendo que el api responda en mas de 1 formato
+      @packages = Package.all
+      respond_to do |format|
+        format.json { render :json => @packages }
+        format.xml { render :xml => @packages }
+      end
+
+    end    
   end
 
   # GET /packages/1
