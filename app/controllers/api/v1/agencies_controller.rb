@@ -4,22 +4,41 @@ module API
       # GET /agencies
       # GET /agencies.json
       def index
-        @agencies = Agency.all
+        #pseudo scope        
+        if params[:phone]        
+          @agencies = Agency.find_by_phone(params[:phone]);
+            if @agencies                
+                respond_to do |format|
+                  format.json { render :json => @agencies }
+                  format.xml { render :xml => @agencies }
+                end                
+              else
+                head :not_found
+              end
+          else
+            # Aqui estoy haciendo que el api responda en mas de 1 formato
+          @agencies = Agency.all
+            respond_to do |format|
+              format.json { render :json => @agencies }
+              format.xml { render :xml => @agencies }
+            end
 
-        # Aqui estoy haciendo que el api responda en mas de 1 formato
-       respond_to do |format|
-          format.json { render :json => @agencies }
-          format.xml { render :xml => @agencies }
-        end
-        #render json: @agencies
+          end    
       end
 
       # GET /agencies/1
       # GET /agencies/1.json
       def show
-        @agency = Agency.find(params[:id])
+        @agencies = Agency.find(params[:id])
 
-        render json: @agency, status: :ok
+        if @agencies                
+          respond_to do |format|
+            format.json { render :json => @agencies }
+            format.xml { render :xml => @agencies }
+          end                
+        else
+          head :not_found
+        end
       end
 
       # POST /agencies

@@ -57,13 +57,17 @@ Endpoints Specifics
 >    * `/api/v1/agencies(.json,.xml)`
 >    * **success**: *status*: *ok*, return all agencies on the specified format
 >    * **error**: *status:  bad_request*, blank page
+>    * `/api/v1/agencies(.json,.xml)` (search by phone)
+>    * **params**: `phone:string` 
+>    * **success**: *status*: *ok*, returns the agenciy found
+>    * **error**: *status:  not_found*, blank page
 > - *POST*                                                                                                 
 >    * `/api/v1/agencies`
 >    * **params**:`name:string, phone:string, address:string`
 >    * **success**: *status*: *created*, return the *json* of the created object
 >    * **error**: *status*: *unprocessable_entity*, blank page
 > - *GET*                                                                                                           
->    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
+>    *  ` /api/v1/agencies/:id(.json,.xml)` (:id, is the index of the *created* object)
 >    * **success**: *status*: *ok*, return the *json* of the especified entity
 >    * **error**: *status*: *bad_request*, blank page
 > - *PUT* / *PATCH*
