@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   #namespace :api, :path => "", :constraints => {:subdomain => "api"},defaults: {format: 'json'} do #
   namespace :api do#, :path => "", :constraints => {:subdomain => "api"} do
+    resources :v1, only: [:index]
       namespace :v1 do
         resources :agencies, except: [:new, :edit]
         resources :users, except: [:new, :edit]

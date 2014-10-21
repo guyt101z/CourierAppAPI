@@ -217,3 +217,8 @@ Endpoints Specifics
 >
 > **Aplies all the routes mentioned before, but these are on the routes** `/<resource>`**and requires, the additional header** *token* **that you** *Obtain*,**making a** *token_request* **explained before, applies on all request except on price, for that API route** 
 >
+>
+>## Version V1
+>
+> **you can refer to the specific document of API endpoints via  `/api/v1`, have fun!!**
+>
