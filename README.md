@@ -53,12 +53,18 @@ Endpoints Specifics
 >## Agencies
 >
 > **Verb**   **URI Pattern**                                                                                                                                                              
-> GET        /api/v1/agencies(.:format)                                                                                                                                
-> POST       /api/v1/agencies                                                                                                                       
-> GET        /api/v1/agencies/:id                                                                                                                                    
-> PATCH      /api/v1/agencies/:id                                                                                                                                          
-> PUT        /api/v1/agencies/:id                                                                                                                           
-> DELETE     /api/v1/agencies/:id
+> *GET*   
+>    * `/api/v1/agencies(.json,.xml)`                                                                                                                             
+> *POST*                                                                                                                              
+>    * `/api/v1/agencies`
+> *GET*                                                                                                                             
+>    *  ` /api/v1/agencies/:id `
+> *PATCH*     
+>    *  ` /api/v1/agencies/:id `
+> *PUT*       
+>    *  ` /api/v1/agencies/:id `
+> *DELETE*    
+>    *  ` /api/v1/agencies/:id `
 >
 
 
