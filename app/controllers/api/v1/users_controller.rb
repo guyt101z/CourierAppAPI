@@ -4,13 +4,41 @@ module API
       # GET /users
       # GET /users.json
       def index
-        @users = User.all
-        # Aqui estoy haciendo que el api responda en mas de 1 formato
-        respond_to do |format|
-          format.json { render :json => @users }
-          format.xml { render :xml => @users }
-        end
-        #render json: @users
+        #array = array.uniq#remueve duplicados
+        #@users = User.all
+        
+        #un pseudo scope para la busqueda por parametros del paquete
+          if params[:cedula]        
+            @users = User.find_by_cedula(params[:cedula]);
+            if @users                
+                respond_to do |format|
+                  format.json { render :json => @users }
+                  format.xml { render :xml => @users }
+                end                
+              else
+                head :not_found
+              end
+          elsif params[:email] 
+              @users = User.find_by_email(params[:email]);
+              if @users
+                
+                respond_to do |format|
+                  format.json { render :json => @users }
+                  format.xml { render :xml => @users }
+                end
+                
+              else
+                head :not_found
+              end
+          else
+            # Aqui estoy haciendo que el api responda en mas de 1 formato
+            @users = User.all
+            respond_to do |format|
+              format.json { render :json => @users }
+              format.xml { render :xml => @users }
+            end
+
+          end    
       end
 
       # GET /users/1
