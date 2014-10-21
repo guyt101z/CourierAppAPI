@@ -17,9 +17,15 @@ module API
       # GET /rates/1
       # GET /rates/1.json
       def show
-        @rate = Rate.find(params[:id])
-
-        render json: @rate
+        @rates = Rate.find(params[:id])
+        if @rates
+          respond_to do |format|
+            format.json { render :json => @rates }
+            format.xml { render :xml => @rates }
+          end
+        else
+          head :not_found
+        end
       end
 
       # POST /rates

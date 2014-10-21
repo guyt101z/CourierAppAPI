@@ -94,7 +94,7 @@ Endpoints Specifics
 >    * **success**: *status*: *created*, return the *json* of the created object
 >    * **error**: *status*: *unprocessable_entity*, blank page
 > - *GET*                                                                                                           
->    *  ` /api/v1/rates/:id ` (:id, is the index of the *created* object)
+>    *  ` /api/v1/rates/:id(.json,.xml)` (:id, is the index of the *created* object)
 >    * **success**: *status*: *ok*, return the *json* of the especified entity
 >    * **error**: *status*: *bad_request*, blank page
 > - *PUT* / *PATCH*       
