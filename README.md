@@ -187,5 +187,5 @@ Endpoints Specifics
 
 >## With token auth
 >
-> **Aplies all the routes mentioned before, but these are on the routes** `/<resource>`**and requires, the additional header** *token* **that you** *Obtain*,**making a** *token_request* **explained before, applies on all request except on price** 
+> **Aplies all the routes mentioned before, but these are on the routes** `/<resource>`**and requires, the additional header** *token* **that you** *Obtain*,**making a** *token_request* **explained before, applies on all request except on price, for that API route** 
 >
