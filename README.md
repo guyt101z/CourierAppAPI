@@ -52,14 +52,14 @@ Endpoints Specifics
 
 >## Agencies
 >
-> **Verb**   **URI Pattern**                                                                                                                                                              
-> *GET*   
->    * `/api/v1/agencies(.json,.xml)`                                                                                                                             
-> *POST*                                                                                                                              
+> **Verb**   **URI Pattern**
+> *GET*
+>    * `/api/v1/agencies(.json,.xml)`
+> *POST*                                                                                                 
 >    * `/api/v1/agencies`
-> *GET*                                                                                                                             
+> *GET*                                                                                                           
 >    *  ` /api/v1/agencies/:id `
-> *PATCH*     
+> *PATCH*
 >    *  ` /api/v1/agencies/:id `
 > *PUT*       
 >    *  ` /api/v1/agencies/:id `
