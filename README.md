@@ -172,15 +172,20 @@ Endpoints Specifics
 >    * **success**: *status*: *accepted*, black page (the object was deleted)
 >    * **error**: *status*: *no_content*, blank page (no object to delete)
 >    * **error**: *status*: *unauthorized*, blank page (no object to delete)
->    * **error**: *status*: *no_content*, token was expired (no object to delete)
+>    * **error**: *status*: *no_content*, maybe token was expired (no object to delete)
 >
 
 >## Pricing
 >
 > **Verb**   **URI Pattern**
 > - *GET*                                                                                                 
->    * `/Pricing`
+>    * `/price`
 >    * **params**:`lenght:decimal width:decimal height:decimal weight:decimal value:decimal`
->    * **success**: *status*: *ok*, return the cost of the package in *json*
+>    * **success**: *status*: *ok*, return the cost of the package in *string*
 >    * **error**: *status*: *bad_request*, blank page
+>
+
+>## With token auth
+>
+> **Aplies all the routes mentioned before, but these are on the routes `/<resource>` and requires, the additional header *token* that you *Obtain*, making a *token_request* explained before, applies on all request except on price ** 
 >
