@@ -165,12 +165,14 @@ Endpoints Specifics
 >    * `/api_key`
 >    * **headers**:`email:string password:string`
 >    * **success**: *status*: *created*, return the *json* of the created object
->    * **error**: *status*: *unauthorized*, blank page
+>    * **error**: *status*: *unauthorized*, blank page, invalid 
+>    * **error**: *status*: *bad_request*, blank page, posible header problem
 > - *DELETE*    
->    *  ` /api_key/:id ` (:id, is the index of the *created* object)
+>    *  ` /api_key/:id ` (:id, is the index of the *created* token)
 >    * **success**: *status*: *accepted*, black page (the object was deleted)
 >    * **error**: *status*: *no_content*, blank page (no object to delete)
 >    * **error**: *status*: *unauthorized*, blank page (no object to delete)
+>    * **error**: *status*: *no_content*, token was expired (no object to delete)
 >
 
 >## Pricing
