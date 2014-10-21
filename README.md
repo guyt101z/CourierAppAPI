@@ -55,10 +55,13 @@ Endpoints Specifics
 > **Verb**   **URI Pattern**
 > - *GET*
 >    * `/api/v1/agencies(.json,.xml)`
->    * **success**: *status*: *ok*, return all agencies on a specified format
->    * **error**: *status*: *bad_request*, blank page
+>    * **success**: *status*: *ok*, return all agencies on the specified format
+>    * **error**: *status:  bad_request*, blank page
 > - *POST*                                                                                                 
 >    * `/api/v1/agencies`
+>    * **params**:`name:string, phone:string, address:string`
+>    * **success**: *status*: *created*, return the *json* of the created object
+>    * **error**: *status*: *unprocessable_entity*, blank page
 > - *GET*                                                                                                           
 >    *  ` /api/v1/agencies/:id `
 > - *PATCH*
