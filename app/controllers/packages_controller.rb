@@ -15,9 +15,16 @@ class PackagesController < ApplicationController
   # GET /packages/1
   # GET /packages/1.json
   def show
-    @package = Package.find(params[:id])
+    @packages = Package.find(params[:id])
+    if @packages
+      respond_to do |format|
+        format.json { render :json => @packages }
+        format.xml { render :xml => @packages }
+      end
 
-    render json: @package
+    else
+      head :not_found
+    end
   end
 
   # POST /packages
