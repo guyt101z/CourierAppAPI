@@ -6,3 +6,5 @@ Los endpoints fueron especificados en el documento README.md, la idea de hacerlo
 >  1. **Luis Campos** CI: 18.033.084
 >  2. **Carlos Caravallo**  C.I: 16.472.080
 >
+> repositorio de github con la fase 2 del proyecto [aqui](https://github.com/torreta/CourierAppAPI).
+>
