@@ -66,7 +66,7 @@ Endpoints Specifics
 >    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
 >    * **success**: *status*: *ok*, return the *json* of the especified entity
 >    * **error**: *status*: *bad_request*, blank page
-> - *PUT*/*PATCH*
+> - *PUT* / *PATCH*
 >    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
 >    * **params**:`name:string` / `phone:string` / `address:string`
 >    * **success**: *status*: *accepted*, return the *json* of the updated object
@@ -93,7 +93,7 @@ Endpoints Specifics
 >    *  ` /api/v1/rates/:id ` (:id, is the index of the *created* object)
 >    * **success**: *status*: *ok*, return the *json* of the especified entity
 >    * **error**: *status*: *bad_request*, blank page
-> - *PUT*/*PATCH*       
+> - *PUT* / *PATCH*       
 >    *  ` /api/v1/rates/:id ` (:id, is the index of the *created* object)
 >    * **params**:`creator_id:integer`/` constant:decimal`/ `K_value:decimal `
 >    * **success**: *status*: *accepted*, return the *json* of the updated object
@@ -120,7 +120,7 @@ Endpoints Specifics
 >    *  ` /api/v1/users/:id ` (:id, is the index of the *created* object)
 >    * **success**: *status*: *ok*, return the *json* of the especified entity
 >    * **error**: *status*: *bad_request*, blank page
-> - *PUT*/*PATCH*
+> - *PUT* / *PATCH*
 >    *  ` /api/v1/users/:id ` (:id, is the index of the *created* object)
 >    * **params**:`email:string`/` password:string`/` role:string`/ `cedula:string`/` name:string` /`lastname:string`/` phone:string`
 >    * **success**: *status*: *accepted*, return the *json* of the updated object
@@ -147,7 +147,7 @@ Endpoints Specifics
 >    *  ` /api/v1/packages/:id ` (:id, is the index of the *created* object)
 >    * **success**: *status*: *ok*, return the *json* of the especified entity
 >    * **error**: *status*: *bad_request*, blank page
-> - *PUT*/*PATCH*
+> - *PUT* / *PATCH*
 >    *  ` /api/v1/packages/:id ` (:id, is the index of the *created* object)
 >    * **params**:`sender_id:integer`/` receiver_id:integer`/` sender_agency_id:integer`/` receiver_agency_id:integer`/` status:string`/` dispatched_at:datetime`/` delivered_at:datetime`/` lenght:decimal`/` width:decimal`/` height:decimal`/` weight:decimal`/` value:decimal`
 >    * **success**: *status*: *accepted*, return the *json* of the updated object
@@ -165,7 +165,7 @@ Endpoints Specifics
 >    * `/api_key`
 >    * **headers**:`email:string password:string`
 >    * **success**: *status*: *created*, return the *json* of the created object
->    * **error**: *status*: *unauthorized*, blank page, invalid 
+>    * **error**: *status*: *unauthorized*, blank page, invalid user
 >    * **error**: *status*: *bad_request*, blank page, posible header problem
 > - *DELETE*    
 >    *  ` /api_key/:id ` (:id, is the index of the *created* token)
