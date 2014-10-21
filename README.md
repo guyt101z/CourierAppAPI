@@ -66,12 +66,7 @@ Endpoints Specifics
 >    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
 >    * **success**: *status*: *ok*, return the *json* of the especified entity
 >    * **error**: *status*: *bad_request*, blank page
-> - *PATCH*
->    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
->    * **params**:`name:string` / `phone:string` / `address:string`
->    * **success**: *status*: *accepted*, return the *json* of the updated object
->    * **error**: *status*: *bad_request*, blank page
-> - *PUT*       
+> - *PUT*/*PATCH*
 >    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
 >    * **params**:`name:string` / `phone:string` / `address:string`
 >    * **success**: *status*: *accepted*, return the *json* of the updated object
@@ -79,7 +74,111 @@ Endpoints Specifics
 > - *DELETE*    
 >    *  ` /api/v1/agencies/:id ` (:id, is the index of the *created* object)
 >    * **success**: *status*: *accepted*, black page (the object was deleted)
->    * **error**: *status*: *no_content*, blank page
+>    * **error**: *status*: *no_content*, blank page (no object to delete)
 >
 
+>## Rates
+>
+> **Verb**   **URI Pattern**
+> - *GET*
+>    * `/api/v1/rates(.json,.xml)`
+>    * **success**: *status*: *ok*, return all rates on the specified format
+>    * **error**: *status:  bad_request*, blank page
+> - *POST*                                                                                                 
+>    * `/api/v1/rates`
+>    * **params**:`creator_id:integer constant:decimal K_value:decimal `
+>    * **success**: *status*: *created*, return the *json* of the created object
+>    * **error**: *status*: *unprocessable_entity*, blank page
+> - *GET*                                                                                                           
+>    *  ` /api/v1/rates/:id ` (:id, is the index of the *created* object)
+>    * **success**: *status*: *ok*, return the *json* of the especified entity
+>    * **error**: *status*: *bad_request*, blank page
+> - *PUT*/*PATCH*       
+>    *  ` /api/v1/rates/:id ` (:id, is the index of the *created* object)
+>    * **params**:`creator_id:integer`/` constant:decimal`/ `K_value:decimal `
+>    * **success**: *status*: *accepted*, return the *json* of the updated object
+>    * **error**: *status*: *bad_request*, blank page
+> - *DELETE*    
+>    *  ` /api/v1/rates/:id ` (:id, is the index of the *created* object)
+>    * **success**: *status*: *accepted*, black page (the object was deleted)
+>    * **error**: *status*: *no_content*, blank page (no object to delete)
+>
 
+>## Users
+>
+> **Verb**   **URI Pattern**
+> - *GET*
+>    * `/api/v1/users(.json,.xml)`
+>    * **success**: *status*: *ok*, return all users on the specified format
+>    * **error**: *status:  bad_request*, blank page
+> - *POST*                                                                                                 
+>    * `/api/v1/users`
+>    * **params**:`email:string password:string role:string cedula:string name:string lastname:string phone:string`
+>    * **success**: *status*: *created*, return the *json* of the created object
+>    * **error**: *status*: *unprocessable_entity*, blank page
+> - *GET*                                                                                                           
+>    *  ` /api/v1/users/:id ` (:id, is the index of the *created* object)
+>    * **success**: *status*: *ok*, return the *json* of the especified entity
+>    * **error**: *status*: *bad_request*, blank page
+> - *PUT*/*PATCH*
+>    *  ` /api/v1/users/:id ` (:id, is the index of the *created* object)
+>    * **params**:`email:string`/` password:string`/` role:string`/ `cedula:string`/` name:string` /`lastname:string`/` phone:string`
+>    * **success**: *status*: *accepted*, return the *json* of the updated object
+>    * **error**: *status*: *bad_request*, blank page
+> - *DELETE*    
+>    *  ` /api/v1/users/:id ` (:id, is the index of the *created* object)
+>    * **success**: *status*: *accepted*, black page (the object was deleted)
+>    * **error**: *status*: *no_content*, blank page (no object to delete)
+>
+
+>## Packages
+>
+> **Verb**   **URI Pattern**
+> - *GET*
+>    * `/api/v1/packages(.json,.xml)`
+>    * **success**: *status*: *ok*, return all packages on the specified format
+>    * **error**: *status:  bad_request*, blank page
+> - *POST*                                                                                                 
+>    * `/api/v1/packages`
+>    * **params**:`sender_id:integer receiver_id:integer sender_agency_id:integer receiver_agency_id:integer status:string dispatched_at:datetime delivered_at:datetime lenght:decimal width:decimal height:decimal weight:decimal value:decimal`
+>    * **success**: *status*: *created*, return the *json* of the created object
+>    * **error**: *status*: *unprocessable_entity*, blank page
+> - *GET*                                                                                                           
+>    *  ` /api/v1/packages/:id ` (:id, is the index of the *created* object)
+>    * **success**: *status*: *ok*, return the *json* of the especified entity
+>    * **error**: *status*: *bad_request*, blank page
+> - *PUT*/*PATCH*
+>    *  ` /api/v1/packages/:id ` (:id, is the index of the *created* object)
+>    * **params**:`sender_id:integer`/` receiver_id:integer`/` sender_agency_id:integer`/` receiver_agency_id:integer`/` status:string`/` dispatched_at:datetime`/` delivered_at:datetime`/` lenght:decimal`/` width:decimal`/` height:decimal`/` weight:decimal`/` value:decimal`
+>    * **success**: *status*: *accepted*, return the *json* of the updated object
+>    * **error**: *status*: *bad_request*, blank page
+> - *DELETE*    
+>    *  ` /api/v1/packages/:id ` (:id, is the index of the *created* object)
+>    * **success**: *status*: *accepted*, black page (the object was deleted)
+>    * **error**: *status*: *no_content*, blank page (no object to delete)
+>
+
+>## Token Request
+>
+> **Verb**   **URI Pattern**
+> - *POST*                                                                                                 
+>    * `/api_key`
+>    * **headers**:`email:string password:string`
+>    * **success**: *status*: *created*, return the *json* of the created object
+>    * **error**: *status*: *unauthorized*, blank page
+> - *DELETE*    
+>    *  ` /api_key/:id ` (:id, is the index of the *created* object)
+>    * **success**: *status*: *accepted*, black page (the object was deleted)
+>    * **error**: *status*: *no_content*, blank page (no object to delete)
+>    * **error**: *status*: *unauthorized*, blank page (no object to delete)
+>
+
+>## Pricing
+>
+> **Verb**   **URI Pattern**
+> - *GET*                                                                                                 
+>    * `/Pricing`
+>    * **params**:`lenght:decimal width:decimal height:decimal weight:decimal value:decimal`
+>    * **success**: *status*: *ok*, return the cost of the package in *json*
+>    * **error**: *status*: *bad_request*, blank page
+>
