@@ -55,6 +55,8 @@ Endpoints Specifics
 > **Verb**   **URI Pattern**
 > - *GET*
 >    * `/api/v1/agencies(.json,.xml)`
+>    * *success:* status: ok and return all agencies on a specified format
+>    * *error:* status: unprocessable_entity, blank page
 > - *POST*                                                                                                 
 >    * `/api/v1/agencies`
 > - *GET*                                                                                                           
