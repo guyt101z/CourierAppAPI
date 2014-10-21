@@ -38,7 +38,7 @@ Endpoints Overview
   POST   ` http://localhost:3000/api_key` with header values on the call "email" and "password", you can use the default email: 'example@gmail.com' and password:'12345'
 
 ### resources 
-   `/api/v1` **index, create, show, update, destroy **
+   `/api/v1` actions: **index**, **create**, **show**, **update**, **destroy**
    
 - Agencies 
 * Users  
@@ -50,15 +50,15 @@ Endpoints Overview
 Endpoints Specifics
 -------------------
 
-### Agencies
-
- Verb   URI Pattern                                                                                                                                                                
- GET    /api/v1/agencies(.:format)                                                                                                                                
- POST   /api/v1/agencies                                                                                                                       
- GET    /api/v1/agencies/:id                                                                                                                                    
- PATCH  /api/v1/agencies/:id                                                                                                                                          
- PUT    /api/v1/agencies/:id                                                                                                                           
- DELETE /api/v1/agencies/:id
-
+>## Agencies
+>
+> **Verb**   **URI Pattern**                                                                                                                                                              
+> GET        /api/v1/agencies(.:format)                                                                                                                                
+> POST       /api/v1/agencies                                                                                                                       
+> GET        /api/v1/agencies/:id                                                                                                                                    
+> PATCH      /api/v1/agencies/:id                                                                                                                                          
+> PUT        /api/v1/agencies/:id                                                                                                                           
+> DELETE     /api/v1/agencies/:id
+>
 
 
