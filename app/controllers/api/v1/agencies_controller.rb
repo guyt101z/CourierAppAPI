@@ -7,11 +7,11 @@ module API
         @agencies = Agency.all
 
         # Aqui estoy haciendo que el api responda en mas de 1 formato
-       # respond_to do |format|
-       #    format.json { render :json => @agencies }
-       #    format.xml { render :xml => @agencies }
-       #  end
-        render json: @agencies
+       respond_to do |format|
+          format.json { render :json => @agencies }
+          format.xml { render :xml => @agencies }
+        end
+        #render json: @agencies
       end
 
       # GET /agencies/1

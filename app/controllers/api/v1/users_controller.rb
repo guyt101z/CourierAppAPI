@@ -8,9 +8,9 @@ module API
         # Aqui estoy haciendo que el api responda en mas de 1 formato
         respond_to do |format|
           format.json { render :json => @users }
-          format.xml { render :xml => @ausers }
+          format.xml { render :xml => @users }
         end
-        render json: @users
+        #render json: @users
       end
 
       # GET /users/1
