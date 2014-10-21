@@ -2,23 +2,56 @@ class UsersController < ApplicationController
   before_filter :restrict_access
   # GET /users
   # GET /users.json
-  def index
-    @users = User.all
-    # Aqui estoy haciendo que el api responda en mas de 1 formato
-    respond_to do |format|
-      format.json { render :json => @users }
-      format.xml { render :xml => @ausers }
-    end
-    render json: @users
-  end
+      def index
+        #array = array.uniq#remueve duplicados
+        #@users = User.all
+        
+        #un pseudo scope para la busqueda por parametros del paquete
+          if params[:cedula]        
+            @users = User.find_by_cedula(params[:cedula]);
+            if @users                
+                respond_to do |format|
+                  format.json { render :json => @users }
+                  format.xml { render :xml => @users }
+                end                
+              else
+                head :not_found
+              end
+          elsif params[:email] 
+              @users = User.find_by_email(params[:email]);
+              if @users
+                
+                respond_to do |format|
+                  format.json { render :json => @users }
+                  format.xml { render :xml => @users }
+                end
+                
+              else
+                head :not_found
+              end
+          else
+            # Aqui estoy haciendo que el api responda en mas de 1 formato
+            @users = User.all
+            respond_to do |format|
+              format.json { render :json => @users }
+              format.xml { render :xml => @users }
+            end
+
+          end    
+      end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-
-
-    render json: @user
+    @users = User.find(params[:id])
+    if @users
+      respond_to do |format|
+        format.json { render :json => @users }
+        format.xml { render :xml => @users }
+      end
+    else
+      head :not_found
+    end
   end
 
   # POST /users

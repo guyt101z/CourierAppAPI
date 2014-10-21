@@ -44,10 +44,15 @@ module API
       # GET /users/1
       # GET /users/1.json
       def show
-        @user = User.find(params[:id])
-
-
-        render json: @user
+        @users = User.find(params[:id])
+        if @users
+          respond_to do |format|
+            format.json { render :json => @users }
+            format.xml { render :xml => @users }
+          end
+        else
+          head :not_found
+        end
       end
 
       # POST /users
