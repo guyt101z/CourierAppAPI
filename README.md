@@ -224,5 +224,5 @@ Endpoints Specifics
 > 
 >## License 
 > 
-> **Ruby on Rails is released under the [MIT License.](https://github.com/torreta/CourierApp).** 
+> **Ruby on Rails is released under the [MIT License.](http://opensource.org/licenses/MIT)** 
 > 
